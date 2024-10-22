@@ -26,6 +26,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 export class AppComponent {
+
   private list = new TodoList("Bob", [ 
     new TodoItem("Go for run"), 
     new TodoItem("Get flowers"), 
@@ -41,7 +42,7 @@ export class AppComponent {
   }
 
   get items(): readonly TodoItem[] { 
-    return this.list.items.filter(item => !item.complete); 
+    return this.list.items.filter(item => this.showComplete || !item.complete); 
   }
 
   addItem(newItem: string){
@@ -49,4 +50,6 @@ export class AppComponent {
       this.list.addItem(newItem);
     }
   }
+
+  showComplete: boolean = false;
 }

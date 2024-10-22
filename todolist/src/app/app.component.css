@@ -40,6 +40,10 @@ table{
   text-align: left;
 }
 
-.tableHeader{
-  background: #7ec0ec;
+.tableHeader, #header{
+  background: #83ceff;
+}
+
+.toggleContainer { 
+  margin: 15px; display: flex 
 }
